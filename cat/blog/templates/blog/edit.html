@@ -1,0 +1,12 @@
+<head>
+    <title>수정페이지</title>
+ </head>
+ <body>
+    <h1>내용 수정</h1>
+ 
+    <form method = "POST">
+       {% csrf_token %}
+       {{ form.as_p }}
+       <button type = "submit">저장</button>
+    </form>
+ </body>

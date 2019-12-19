@@ -1,0 +1,18 @@
+<head>
+    <title>디테일페이지</title>
+ </head>
+ <body>
+    <h1>원본</h1>
+ 
+    <div>
+       <h1>{{post.title}}</h1>
+ 
+       <p>{{post.created_date}}</p>
+ 
+       <p>{{post.text}}</p>
+       <a href = "{% url 'home' %}">홈으로</a>
+       <a href="{% url 'edit' post.id %}">누르면 수정</a>
+       <a href="{% url 'delete' post.id %}">누르면 삭제</a>
+    </div>
+ 
+ </body>

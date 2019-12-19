@@ -1,0 +1,17 @@
+<head>
+    <title>홈페이지</title>
+ </head>
+ <body>
+    <h1>Hausaufgabe</h1>
+    {% for post in posts.all %}
+      <div>
+         <h1>{{post.title}}</h1>
+ 
+         <p>{{post.create_data}}</p>
+ 
+         <p>{{post.text|truncatechars:10}}<a href="{% url 'detail' post.id%}">more</a></p>
+      </div>
+    {% endfor %}
+
+    <a href="{%url 'new'%}">누르면 새글</a>   
+ </body>
