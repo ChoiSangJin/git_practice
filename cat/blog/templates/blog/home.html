@@ -8,8 +8,11 @@
          <h1>{{post.title}}</h1>
  
          <p>{{post.create_data}}</p>
- 
-         <p>{{post.text|truncatechars:10}}<a href="{% url 'detail' post.id%}">more</a></p>
+      {% if post.text and truncatechars %}     
+         <p>{{post.text|truncatechars:10}}<a href="{% url 'detail' post.id%}"></a></p>
+      {% else %}
+         <p>{{post.text}}<a href="{% url 'detail' post.id%}">...more</a></p>
+      {% endif %}
       </div>
     {% endfor %}
 
